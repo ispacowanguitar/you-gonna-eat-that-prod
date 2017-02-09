@@ -1,0 +1,7 @@
+<h1>Create a lunch date</h1>
+<p>(this will delete ALL PREVIOUS DATA, and will NOT ask if you are sure)</p>
+<%= form_tag("new", method: "post") do %>
+	<%= date_field_tag(:date) %>
+	<%= text_field_tag(:title) %>
+	<%= submit_tag("create lunch date") %>
+<% end %>

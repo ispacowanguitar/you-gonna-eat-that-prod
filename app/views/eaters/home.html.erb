@@ -1,0 +1,35 @@
+<h1 style="font-family: Arial">Are you gonna eat that?</h1>
+<%= button_to "Yes", eaters_sign_up_path, method: :get, class: "btn btn-primary btn-block" %>
+<hr>
+<%= button_to "No", "/", method: :get, class: "btn btn-primary btn-block" %>
+
+<% if @generated == true %>
+	<p>groups have been generated for <%= @lunch.title %>, on <%= @lunch.date %></p>
+
+
+		<% (1..@number_of_groups).each do |group| %>
+		<table class="table">
+		<thead>
+			<tr>
+				<th><h2>Group number <%= group %></h2></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>
+			
+		<% @eaters.each do |eater| %>
+		<% if eater.group_number == group %>
+			<p><%= eater.name %> </p>
+			<% end %>
+		<% end %>
+				</th>
+			</tr>
+		</tbody>
+
+	</table>
+	<% end %>
+<% else %>
+		
+	<p>(next lunch will be <%= @lunch.title %>, on <%= @lunch.date.strftime('%B %d, %Y') %>)</p>
+<% end %>

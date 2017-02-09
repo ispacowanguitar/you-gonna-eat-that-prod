@@ -1,0 +1,4 @@
+<%= form_tag("/eaters/new", method: "post") do %>
+	<%= text_field_tag(:name,nil, :class => 'form-control') %>
+	<%= submit_tag("Add me", class: "btn btn-primary btn-block") %>
+<% end %>
