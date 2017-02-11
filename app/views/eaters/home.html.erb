@@ -1,8 +1,14 @@
 <h1 style="font-family: Arial">Are you gonna eat that?</h1>
-<%= button_to "Yes", eaters_sign_up_path, method: :get, class: "btn btn-primary btn-block" %>
+<p>An Arity Lunch Generator, by Alex Ispa-Cowan</p>
 <hr>
-<%= button_to "No", "/", method: :get, class: "btn btn-primary btn-block" %>
-
+	<p>Next Lunch: <%= @lunch.title %></p> 
+	<p>Date: <%= @lunch.date.strftime('%B %d, %Y') %></p>
+<hr>
+<% if @generated == false %>
+	<%= button_to "Yes", eaters_sign_up_path, method: :get, class: "btn btn-primary btn-block" %>
+	<hr>
+	<%= button_to "No", "/dissapointed", method: :get, class: "btn btn-primary btn-block" %>
+<% end %>
 <% if @generated == true %>
 	<p>groups have been generated for <%= @lunch.title %>, on <%= @lunch.date %></p>
 
@@ -15,12 +21,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th>
+			
 			
 		<% @eaters.each do |eater| %>
 		<% if eater.group_number == group %>
-			<p><%= eater.name %> </p>
+			<tr><td><p><%= eater.name %> </p></td></tr>
 			<% end %>
 		<% end %>
 				</th>
@@ -31,5 +36,4 @@
 	<% end %>
 <% else %>
 		
-	<p>(next lunch will be <%= @lunch.title %>, on <%= @lunch.date.strftime('%B %d, %Y') %>)</p>
 <% end %>

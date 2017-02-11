@@ -4,20 +4,16 @@ class EatersController < ApplicationController
   	@lunch = Lunch.first
 
   	@generated = Lunch.first.generated
-  	Eater.all.each do |eater|
-  		if eater.group_number == nil
-  			@generated = false
-  		end
-  		if Eater.all.find_by(group_number: 2) == nil
-  			@generated = false
-  		end
-  	end
+    Eater.all.each do |eater|
+      if eater.group_number == nil
+        @generated = false
+      end
+    end
 
-  	if Eater.first && Eater.first.group_number != nil
-  		@eaters = Eater.all.order(:group_number)
-  		@number_of_groups = @eaters.last.group_number
-  		puts @number_of_groups
-  	end
+    if Eater.first && Eater.first.group_number != nil
+      @eaters = Eater.all.order(:group_number)
+      @number_of_groups = @eaters.last.group_number
+    end
   end
 
   def sign_up
