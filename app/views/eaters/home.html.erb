@@ -1,10 +1,10 @@
 <h1 style="font-family: Arial">Are you gonna eat that?</h1>
 <p>An Arity Lunch Generator, by Alex Ispa-Cowan</p>
 <hr>
+<% if @generated == false %>
 	<p>Next Lunch: <%= @lunch.title %></p> 
 	<p>Date: <%= @lunch.date.strftime('%B %d, %Y') %></p>
 <hr>
-<% if @generated == false %>
 	<%= button_to "Yes", eaters_sign_up_path, method: :get, class: "btn btn-primary btn-block" %>
 	<hr>
 	<%= button_to "No", "/dissapointed", method: :get, class: "btn btn-primary btn-block" %>
