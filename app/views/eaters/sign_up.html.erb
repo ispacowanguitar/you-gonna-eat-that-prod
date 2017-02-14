@@ -1,5 +1,6 @@
 <h1 style="font-family: Arial">Of course you are!</h1>
 <%= form_tag("/eaters/new", method: "post", style: "margin-top:100px") do %>
 	<%= text_field_tag(:name,nil, placeholder: "full name", :class => 'form-control') %>
+	<%= text_field_tag(:email,nil, placeholder: "email", :class => 'form-control') %>
 	<%= submit_tag("Add me", style: "margin-top: 10px",class: "btn btn-primary btn-block") %>
 <% end %>

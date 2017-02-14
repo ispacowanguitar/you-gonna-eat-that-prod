@@ -21,7 +21,7 @@ class EatersController < ApplicationController
 
   def new
     if !Lunch.first.generated
-    	eater = Eater.new(name: params[:name])
+    	eater = Eater.new(name: params[:name], email: params[:email])
     	 if eater.save
        end
       end

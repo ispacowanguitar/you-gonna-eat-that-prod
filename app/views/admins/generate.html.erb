@@ -1,6 +1,6 @@
 <h3>Eaters(<%= @eaters.count %>): </h3>
 <% @eaters.each do |eater| %>
-	<%= eater.name %> <%= eater.group_number %> <%= link_to("delete", "/jennys_super_secret_admin_stuff/delete/#{eater.id}", value: eater.name) %> <br>
+	<%= eater.name %> --- <%= eater.email %> <%= eater.group_number %> <%= link_to("delete", "/jennys_super_secret_admin_stuff/delete/#{eater.id}", value: eater.name) %> <br>
 <% end %>
 
 <%= form_tag("generate", method: "get") do %>

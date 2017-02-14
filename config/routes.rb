@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'thanks' => 'eaters#thanks'
   get 'dissapointed' => 'eaters#dissapointed'
 
-  get 'jennys_super_secret_admin_stuff/create' => 'admins#create'
-  post 'jennys_super_secret_admin_stuff/new' => 'admins#new'
-  get 'jennys_super_secret_admin_stuff/generate' => 'admins#generate'
-  get 'jennys_super_secret_admin_stuff/delete/:id' => 'admins#delete'
+  get 'arity_admin_url/create' => 'admins#create'
+  post 'arity_admin_url/new' => 'admins#new'
+  get 'arity_admin_url/generate' => 'admins#generate'
+  get 'arity_admin_url/delete/:id' => 'admins#delete'
 end
