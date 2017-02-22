@@ -7,7 +7,7 @@ class AdminsController < ApplicationController
   	Eater.delete_all
   	lunch = Lunch.new(title: params[:title], date: params[:date], generated: false)
   	lunch.save
-  	redirect_to jennys_super_secret_admin_stuff_generate_path
+  	redirect_to arity_admin_url_generate_path
   end
 
   def generate
