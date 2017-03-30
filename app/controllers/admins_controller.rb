@@ -37,6 +37,6 @@ class AdminsController < ApplicationController
   def delete
   	eater = Eater.find(params[:id])
   	eater.delete
-  	redirect_to '/jennys_super_secret_admin_stuff/generate'
+  	redirect_to '/arity_admin_url/generate'
   end
 end
